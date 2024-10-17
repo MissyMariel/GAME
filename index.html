@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treasure Hunt Game - Levels</title>
+    <title>Treasure Hunt Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
+    <!-- Home Screen -->
+    <div id="home-screen" class="container">
+        <div class="header">
+            <h1>Treasure Hunt</h1>
+        </div>
+        <div class="treasure-image">
+            <img src="treasure.png" alt="Treasure Chest">
+        </div>
+        <button class="start-button" onclick="startGame()">Start Hunting</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-container" class="game-container" style="display:none;">
         <h1>Treasure Hunt Game</h1>
         <p>Click on a chest to find the treasure!</p>
         <div class="game-info">
@@ -18,8 +30,23 @@
         <div class="grid" id="grid"></div>
         <p id="message"></p>
         <button onclick="resetGame()">Restart Game</button>
+        <button class="quit-button" onclick="quitGame()">Quit Game</button>
     </div>
-    
+
     <script src="script.js"></script>
+
+    <script>
+        function startGame() {
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+            initializeGame();
+        }
+
+        function quitGame() {
+            // Redirect to home screen when quit button is clicked
+            document.getElementById('home-screen').style.display = 'block';
+            document.getElementById('game-container').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

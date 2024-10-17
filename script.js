@@ -3,12 +3,8 @@ let points = 0;
 let maxClicks = 5;
 let clicksLeft = maxClicks;
 let treasureIndex = 0;
-let totalChests = 4;  // Start with 4 chests for horizontal layout
+let totalChests = 4;
 let gameOver = false;
-
-window.onload = () => {
-    initializeGame();
-};
 
 // Initialize or reset the game
 function initializeGame() {
